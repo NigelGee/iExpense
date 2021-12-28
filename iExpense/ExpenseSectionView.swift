@@ -30,6 +30,9 @@ struct ExpenseSectionView: View {
                         .foregroundColor(.secondary)
                         .multilineTextAlignment(.leading)
                 }
+                .accessibilityElement()
+                .accessibilityLabel("\(item.name) , \(item.amount.formatted(.localCurrency))")
+                .accessibilityHint(item.description)
             }
             .onDelete(perform: deleteItems)
         } header: {
